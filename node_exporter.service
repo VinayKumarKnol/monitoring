@@ -1,0 +1,9 @@
+[Unit]
+Description=Node Exporter Service
+
+[Service]
+User=root
+ExecStart=<location of your node exporter installation>
+
+[Install]
+WantedBy=multi-user.targe
