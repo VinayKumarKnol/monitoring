@@ -3,7 +3,7 @@
 ---
 We are going to use the docker containerization for the running prometheus. Accessed at http://localhost:9090
 
-To setup prometheus use the script present in the [Prometheus](promtheus/).
+To setup prometheus use the script present in the [Prometheus](prometheus/).
 
 
 ### Installing node exporter
