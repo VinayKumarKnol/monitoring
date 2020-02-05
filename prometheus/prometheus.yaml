@@ -1,0 +1,33 @@
+#global configurations used by prometheus
+global_config:
+  # define the interval at which we want to read the metrics from targets.
+  scrape_duration:     30s 
+  # this defines the rate at which the rules will be evaluated.
+  evaluation_interval: 15s 
+  
+# Alert configuration:
+# This configuration is used when we are using the alertmanager module.
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets:
+        # - not really any for now. because we are not alerting.
+
+
+#for alerting we can load our rule files but in this example we won't be.
+
+#now we are defining the targets (remote and local both for monitoring
+#make sure the port we are accessing are not firewalled from access
+
+scrape_configs:
+  - job_name: 'Promtheus'
+    # promtheus can monitor itself as well.
+    scrape_configs:
+    - targets:
+       - 'localhost:9090'
+
+  - job_name: 'node_exporter'
+    # a seperate segment for node exporter based monitoring
+    scrape_configs:
+    - target:
+       - 'localhost:9100'
